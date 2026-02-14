@@ -11,7 +11,7 @@ const badgeVariants = cva("font-medium", {
       info: "bg-blue-500 text-white",
     },
     size: {
-      sm: "text-sm px-2.5 py-0.5",
+      sm: "text-sm px-2 py-0.5",
       md: "text-md px-4 py-1",
     },
     rounded: {
