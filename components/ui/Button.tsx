@@ -14,7 +14,7 @@ const buttonVarients = cva(
         secondry:
           "bg-gray-600 text-white hover:bg-gray-700 active:scale-95 transition-transform cursor-pointer",
         outline:
-          "border border-gray-400 active:scale-95 transition-transform cursor-pointer",
+          "border border-gray-400 text-white active:scale-95 transition-transform cursor-pointer",
       },
       size: {
         sm: "px-2 py-1 text-sm",
