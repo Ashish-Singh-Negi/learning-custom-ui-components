@@ -2,6 +2,7 @@ import Alert from "@/components/ui/Alert";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import Button2 from "@/components/ui/Button2";
+import Input from "@/components/ui/Input";
 
 export default function Home() {
   return (
@@ -31,6 +32,13 @@ export default function Home() {
         <Button2 children={"ghost"} variant={"ghost"} />
         <Button2 children={"outline"} variant={"outline"} />
         <Button2 children={"ghost"} variant={"ghost"} fullWidth />
+      </div>
+      <div className="w-full flex gap-4">
+        <Input placeholder="Enter your name..." />
+        <Input placeholder="Enter your name..." size={"md"} />
+        <Input placeholder="Enter your name..." size={"lg"} />
+        <Input placeholder="Enter your name..." size={"sm"} error />
+        <Input placeholder="Enter your name..." size={"sm"} error disabled />
       </div>
     </main>
   );
