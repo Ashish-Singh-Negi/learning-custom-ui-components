@@ -1,3 +1,4 @@
+import Toast from "@/components/ui/Toast";
 import Alert from "@/components/ui/Alert";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
@@ -96,7 +97,7 @@ export default function Home() {
         </Card>
       </div>
       <div className="w-full flex gap-4">
-        <Model size={"lg"} centered blurBackground>
+        {/* <Model size={"lg"} centered blurBackground>
           <h2 className="p-2 bg-black text-white">Title goes here</h2>
           <p className="p-2">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
@@ -104,8 +105,11 @@ export default function Home() {
             numquam pariatur nam, ducimus aliquid at soluta, ipsum vel nemo
             consequuntur debitis sit.
           </p>
-        </Model>
+        </Model> */}
       </div>
+      {/* Toast */}
+      <Toast type={"success"} children={"success toast"} />
+      <Toast type={"error"} position={"bottom-left"} children={"error toast"} />
     </main>
   );
 }
