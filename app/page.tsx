@@ -4,18 +4,18 @@ import Button from "@/components/ui/Button";
 import Button2 from "@/components/ui/Button2";
 import Card from "@/components/ui/Card";
 import Input from "@/components/ui/Input";
+import Model from "@/components/ui/Model";
 
 export default function Home() {
   return (
     <main className="h-dvh w-screen py-10 flex flex-col gap-10 px-10">
       <div className="flex gap-4">
         <Button variant={"primary"} size={"md"} />
-        <Button variant={"secondry"} size={"md"} />
+        <Button variant={"secondary"} size={"md"} />
         <Button variant={"outline"} size={"md"} />
-        <Button variant={"secondry"} size={"sm"} />
       </div>
       <div className="flex gap-4">
-        <Badge variant={"success"} size={"sm"} />
+        <Badge variant={"success"} size={"md"} />
         <Badge variant={"error"} size={"md"} rounded />
         <Badge variant={"warning"} />
         <Badge variant={"info"} rounded />
@@ -94,6 +94,17 @@ export default function Home() {
             earum!
           </p>
         </Card>
+      </div>
+      <div className="w-full flex gap-4">
+        <Model size={"lg"} centered blurBackground>
+          <h2 className="p-2 bg-black text-white">Title goes here</h2>
+          <p className="p-2">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
+            vero adipisci maiores consectetur excepturi voluptates eligendi iure
+            numquam pariatur nam, ducimus aliquid at soluta, ipsum vel nemo
+            consequuntur debitis sit.
+          </p>
+        </Model>
       </div>
     </main>
   );

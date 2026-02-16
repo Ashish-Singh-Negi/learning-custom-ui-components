@@ -5,14 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes } from "react";
 
 const buttonVarients = cva(
-  "rounded-md font-medium transition-colors focus:outline-none",
+  "rounded-md font-medium transition-colors focus:outline-none border-2",
   {
     variants: {
       variant: {
         primary:
           "bg-blue-600 text-white hover:bg-blue-700 active:scale-95 transition-transform cursor-pointer",
-        secondry:
-          "bg-gray-600 text-white hover:bg-gray-700 active:scale-95 transition-transform cursor-pointer",
+        secondary:
+          "bg-blue-50 text-blue-500 border-blue-500 active:scale-95 transition-transform cursor-pointer",
         outline:
           "border border-gray-400 text-white active:scale-95 transition-transform cursor-pointer",
       },
