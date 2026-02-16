@@ -32,11 +32,12 @@ export default function Badge({
   className,
   variant,
   size,
+  rounded,
   ...props
 }: BadgeProps) {
   return (
     <button
-      className={cn(badgeVariants({ variant, size }), className)}
+      className={cn(badgeVariants({ variant, size, rounded }), className)}
       {...props}
     >
       {variant}

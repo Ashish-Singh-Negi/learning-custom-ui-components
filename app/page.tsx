@@ -2,6 +2,7 @@ import Alert from "@/components/ui/Alert";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import Button2 from "@/components/ui/Button2";
+import Card from "@/components/ui/Card";
 import Input from "@/components/ui/Input";
 
 export default function Home() {
@@ -39,6 +40,60 @@ export default function Home() {
         <Input placeholder="Enter your name..." size={"lg"} />
         <Input placeholder="Enter your name..." size={"sm"} error />
         <Input placeholder="Enter your name..." size={"sm"} error disabled />
+      </div>
+      <div className="flex gap-4">
+        <Card>
+          <div className="h-32 w-60 bg-amber-100 rounded-md"></div>
+          <div className="font-medium my-1">Flat card</div>
+          <p className="w-60 text-sm">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            laborum aliquam, ipsum aut officia quibusdam sapiente iusto possimus
+            error natus in commodi quae cum molestias illo cumque repellendus at
+            earum!
+          </p>
+        </Card>
+        <Card variant={"elevated"}>
+          <div className="h-32 w-60 bg-amber-100 rounded-md"></div>
+          <div className="font-medium my-1">Elevated Card</div>
+          <p className="w-60 text-sm">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            laborum aliquam, ipsum aut officia quibusdam sapiente iusto possimus
+            error natus in commodi quae cum molestias illo cumque repellendus at
+            earum!
+          </p>
+        </Card>
+        <Card variant={"flat"} tone={"danger"}>
+          <div className="h-32 w-60 bg-amber-100 rounded-md"></div>
+          <div className="font-medium my-1">Danger tone card</div>
+          <p className="w-60 text-sm">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            laborum aliquam, ipsum aut officia quibusdam sapiente iusto possimus
+            error natus in commodi quae cum molestias illo cumque repellendus at
+            earum!
+          </p>
+        </Card>
+        <Card variant={"flat"} tone={"danger"} interactive>
+          <div className="h-32 w-60 bg-amber-100 rounded-md"></div>
+          <div className="font-medium my-1">Danger tone + Interactive card</div>
+          <p className="w-60 text-sm">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            laborum aliquam, ipsum aut officia quibusdam sapiente iusto possimus
+            error natus in commodi quae cum molestias illo cumque repellendus at
+            earum!
+          </p>
+        </Card>
+        <Card variant={"flat"} tone={"success"} interactive>
+          <div className="h-32 w-60 bg-amber-100 rounded-md"></div>
+          <div className="font-medium my-1">
+            success tone + Interactive card
+          </div>
+          <p className="w-60 text-sm">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+            laborum aliquam, ipsum aut officia quibusdam sapiente iusto possimus
+            error natus in commodi quae cum molestias illo cumque repellendus at
+            earum!
+          </p>
+        </Card>
       </div>
     </main>
   );
