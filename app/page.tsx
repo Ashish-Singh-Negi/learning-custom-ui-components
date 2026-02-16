@@ -6,6 +6,7 @@ import Button2 from "@/components/ui/Button2";
 import Card from "@/components/ui/Card";
 import Input from "@/components/ui/Input";
 import Model from "@/components/ui/Model";
+import { DataTableRow } from "@/components/ui/DataRowTable";
 
 export default function Home() {
   return (
@@ -110,6 +111,12 @@ export default function Home() {
       {/* Toast */}
       <Toast type={"success"} children={"success toast"} />
       <Toast type={"error"} position={"bottom-left"} children={"error toast"} />
+      {/* Row */}
+      <div className="divide-y border rounded-md overflow-hidden">
+        <DataTableRow status={"success"} striped>
+          <div className="">Apple G</div>
+        </DataTableRow>
+      </div>
     </main>
   );
 }
