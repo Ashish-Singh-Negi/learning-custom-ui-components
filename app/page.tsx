@@ -8,6 +8,7 @@ import Input from "@/components/ui/Input";
 import Model from "@/components/ui/Model";
 import { DataTableRow } from "@/components/ui/DataRowTable";
 import Textarea from "@/components/ui/Textarea";
+import CommandPalette from "@/components/CommandPalette";
 
 export default function Home() {
   return (
@@ -52,6 +53,7 @@ export default function Home() {
         <Input placeholder="Enter your name..." size={"sm"} error disabled />
         <Input placeholder="Will extend" />
       </div>
+      <CommandPalette />
       <div className="flex gap-4">
         <Card>
           <div className="h-32 w-60 bg-amber-100 rounded-md"></div>
@@ -118,8 +120,8 @@ export default function Home() {
         </Model> */}
       </div>
       {/* Toast */}
-      <Toast type={"success"} children={"success toast"} />
-      <Toast type={"error"} position={"bottom-left"} children={"error toast"} />
+      {/* <Toast type={"success"} children={"success toast"} /> */}
+      {/* <Toast type={"error"} position={"bottom-left"} children={"error toast"} /> */}
       {/* Row */}
       <div className="divide-y border rounded-md overflow-hidden">
         <DataTableRow status={"success"} striped>
