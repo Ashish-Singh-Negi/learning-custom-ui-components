@@ -49,7 +49,7 @@ export default function Card({
   return (
     <motion.div
       whileHover={{
-        rotateZ: 10,
+        scale: 1.05,
       }}
       transition={{ duration: 0.3 }}
       className={cn(cardVariants({ variant, tone, interactive }), className)}

@@ -32,11 +32,14 @@ export default function TodoList() {
       const todoToMove = prev.find((todo) => todo.id === id);
       if (!todoToMove) return prev;
 
-      todoToMove.isCompleted = true;
+      const updatedTodo = {
+        ...todoToMove,
+        isCompleted: true,
+      };
 
       const remaining = prev.filter((todo) => todo.id !== id);
 
-      return [...remaining, todoToMove];
+      return [...remaining, updatedTodo];
     });
   }
 
@@ -49,30 +52,25 @@ export default function TodoList() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="h-96 w-2xl bg-gray-50 rounded-md flex flex-col gap-1 p-2"
+        className="h-96 w-2xl bg-gray-200 rounded-md flex flex-col gap-1.5 p-2"
       >
         {todos.map((todo) => (
           <motion.div
             layout
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
             key={todo.id}
             onClick={() => handleTodoComplete(todo.id)}
-            className="px-4 py-2.5 bg-cyan-50 flex gap-4 rounded-md font-medium"
+            className="px-4 py-2.5 bg-white flex gap-4 rounded-md font-medium"
           >
-            {todo.isCompleted === true ? (
-              <motion.p
-                initial={{
-                  textDecoration: "none",
-                }}
-                animate={{
-                  textDecoration: "line-through",
-                }}
-                transition={{ duration: 0.7 }}
-              >
-                {todo.content}
-              </motion.p>
-            ) : (
-              <motion.p>{todo.content}</motion.p>
-            )}
+            <motion.p
+              animate={{
+                textDecoration: todo.isCompleted ? "line-through red" : "none",
+                opacity: todo.isCompleted ? 0.5 : 1,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              {todo.content}
+            </motion.p>
           </motion.div>
         ))}
       </motion.div>
