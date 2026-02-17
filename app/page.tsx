@@ -9,11 +9,13 @@ import Model from "@/components/ui/Model";
 import { DataTableRow } from "@/components/ui/DataRowTable";
 import Textarea from "@/components/ui/Textarea";
 import CommandPalette from "@/components/CommandPalette";
+import TodoList from "@/components/TodoList";
 
 export default function Home() {
   return (
     <main className="h-dvh w-screen py-10 flex flex-col gap-10 px-10">
-      <div className="flex gap-4">
+      <TodoList />
+      {/* <div className="flex gap-4">
         <Button variant={"primary"} size={"md"} />
         <Button variant={"secondary"} size={"md"} />
         <Button variant={"outline"} size={"md"} />
@@ -52,7 +54,7 @@ export default function Home() {
         <Input placeholder="Enter your name..." size={"sm"} error />
         <Input placeholder="Enter your name..." size={"sm"} error disabled />
         <Input placeholder="Will extend" />
-      </div>
+      </div> */}
       <CommandPalette />
       <div className="flex gap-4">
         <Card>
@@ -118,15 +120,6 @@ export default function Home() {
             consequuntur debitis sit.
           </p>
         </Model> */}
-      </div>
-      {/* Toast */}
-      {/* <Toast type={"success"} children={"success toast"} /> */}
-      {/* <Toast type={"error"} position={"bottom-left"} children={"error toast"} /> */}
-      {/* Row */}
-      <div className="divide-y border rounded-md overflow-hidden">
-        <DataTableRow status={"success"} striped>
-          <div className="">Apple G</div>
-        </DataTableRow>
       </div>
     </main>
   );

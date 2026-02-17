@@ -12,7 +12,7 @@ export default function CommandPalette({
   children,
   ...props
 }: HTMLMotionProps<"div">) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [search, setSearch] = useState("");
 
