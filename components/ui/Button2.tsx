@@ -1,9 +1,11 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import { ButtonHTMLAttributes } from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center font-medium transition-all active:scale-95 focus:outline-none disabled:cursor-not-allowed disabled:opacity-70 cursor-pointer",
+  "inline-flex items-center justify-center font-medium focus:outline-none disabled:cursor-not-allowed disabled:opacity-70 cursor-pointer",
   {
     variants: {
       variant: {
@@ -47,7 +49,7 @@ const buttonVariants = cva(
   },
 );
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+type ButtonProps = HTMLMotionProps<"button"> &
   VariantProps<typeof buttonVariants>;
 
 export default function Button2({
@@ -60,7 +62,7 @@ export default function Button2({
   ...props
 }: ButtonProps) {
   return (
-    <button
+    <motion.button
       disabled={loading!}
       className={cn(
         buttonVariants({ variant, size, loading, fullWidth }),
@@ -69,6 +71,6 @@ export default function Button2({
       {...props}
     >
       {children}
-    </button>
+    </motion.button>
   );
 }

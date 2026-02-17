@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import { HTMLAttributes, useEffect } from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
 
 const toastVariants = cva(
   "fixed z-50 rounded-md border px-4 py-2 shadow-md transition-all",
@@ -37,8 +37,7 @@ const toastVariants = cva(
   },
 );
 
-type ToastProps = HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof toastVariants>;
+type ToastProps = HTMLMotionProps<"div"> & VariantProps<typeof toastVariants>;
 
 export default function Toast({
   className,
@@ -49,11 +48,14 @@ export default function Toast({
   ...props
 }: ToastProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, translateY: -100 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 0.3 }}
       className={cn(toastVariants({ position, type, dismissible }), className)}
       {...props}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

@@ -7,6 +7,7 @@ import Card from "@/components/ui/Card";
 import Input from "@/components/ui/Input";
 import Model from "@/components/ui/Model";
 import { DataTableRow } from "@/components/ui/DataRowTable";
+import Textarea from "@/components/ui/Textarea";
 
 export default function Home() {
   return (
@@ -36,12 +37,20 @@ export default function Home() {
         <Button2 children={"outline"} variant={"outline"} />
         <Button2 children={"ghost"} variant={"ghost"} fullWidth />
       </div>
+
+      <div className="flex gap-4">
+        <Textarea placeholder="Write mail" tone={"default"}></Textarea>
+        <Textarea placeholder="Write mail" tone={"mail"}></Textarea>
+        <Textarea placeholder="Write mail" tone={"mail"}></Textarea>
+      </div>
+
       <div className="w-full flex gap-4">
         <Input placeholder="Enter your name..." />
         <Input placeholder="Enter your name..." size={"md"} />
         <Input placeholder="Enter your name..." size={"lg"} />
         <Input placeholder="Enter your name..." size={"sm"} error />
         <Input placeholder="Enter your name..." size={"sm"} error disabled />
+        <Input placeholder="Will extend" />
       </div>
       <div className="flex gap-4">
         <Card>

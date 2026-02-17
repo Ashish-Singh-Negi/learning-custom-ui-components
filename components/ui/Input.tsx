@@ -3,7 +3,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { InputHTMLAttributes } from "react";
 
 const inputVariants = cva(
-  "w-80 bg-white rounded-md outline-none border-2 border-black focus:border-blue-500 caret-blue-500",
+  "w-40 bg-white rounded-md outline-none border-2 border-black focus:border-blue-500 caret-blue-500",
   {
     variants: {
       size: {
@@ -17,6 +17,10 @@ const inputVariants = cva(
       },
       disabled: {
         true: "border-transparent bg-gray-300 cursor-not-allowed",
+        false: "",
+      },
+      extend: {
+        true: "h-20 w-96",
         false: "",
       },
     },
@@ -41,6 +45,7 @@ export default function Input({
   size,
   error,
   disabled,
+  extend,
   placeholder,
   children,
   ...props
@@ -49,7 +54,10 @@ export default function Input({
     <input
       disabled={disabled}
       placeholder={placeholder}
-      className={cn(inputVariants({ size, error, disabled }), className)}
+      className={cn(
+        inputVariants({ size, error, disabled, extend }),
+        className,
+      )}
       {...props}
     >
       {children}

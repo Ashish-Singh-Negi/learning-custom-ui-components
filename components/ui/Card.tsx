@@ -1,17 +1,8 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import { HTMLAttributes } from "react";
-
-// variant: flat | elevated
-// tone: default | danger | success
-// interactive: boolean
-
-// Requirements
-
-// Elevated adds shadow
-// Interactive adds hover scale + cursor
-// Compound rule:
-// interactive + elevated → stronger hover shadow
+import { HTMLMotionProps, motion } from "framer-motion";
 
 const cardVariants = cva(
   "rounded-md transition-all duration-200 p-4 border-2 border-gray-200",
@@ -45,8 +36,7 @@ const cardVariants = cva(
   },
 );
 
-type CardProps = HTMLAttributes<HTMLElement> &
-  VariantProps<typeof cardVariants>;
+type CardProps = HTMLMotionProps<"div"> & VariantProps<typeof cardVariants>;
 
 export default function Card({
   className,
@@ -57,11 +47,15 @@ export default function Card({
   ...props
 }: CardProps) {
   return (
-    <div
+    <motion.div
+      whileHover={{
+        rotateZ: 10,
+      }}
+      transition={{ duration: 0.3 }}
       className={cn(cardVariants({ variant, tone, interactive }), className)}
       {...props}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
